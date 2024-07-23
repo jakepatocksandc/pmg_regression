@@ -18,7 +18,7 @@ st.title('Regression Models for PME/PMH')
 housing_permits = st.text_input('Housing Permits Issued Per Year')
 plug_in_hybrid = st.text_input('Plug-in EV Units Sold Per Year')
 electric = st.text_input('EV Units Sold Per Year')
-comm_construction = st.text_input('Commercial Construction Spending Per Year(millions)')
+comm_construction = st.text_input('Commercial Construction Spending Per Year (million of $)')
 capex_iou = st.text_input('Underground CAPEX IOU')
 model_type = st.selectbox('Choose Model Type', ['Random Forest', 'Elastic Net', 'Lasso'])
 
