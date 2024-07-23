@@ -1,6 +1,5 @@
 joblib
 streamlit
 numpy
-warnings
 sklearn
 pandas

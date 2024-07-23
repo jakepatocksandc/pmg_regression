@@ -1,7 +1,6 @@
 import joblib
 import streamlit as st
 import numpy as np
-import warnings
 import sklearn
 import pandas as pd 
 
@@ -31,15 +30,15 @@ elif model_type == 'Lasso':
     model = lasso_model
 
 def infer(model, housing_permits, plug_in_hybrid, electric, comm_construction, capex_iou):
-    with warnings.catch_warnings():
-        warnings.simplefilter("ignore")
-        sample = np.array([[housing_permits, plug_in_hybrid, electric, comm_construction, capex_iou]], dtype=float).reshape(1, -1)
-        scaled_sample = feature_scaler.transform(sample)
-        prediction = model.predict(scaled_sample)
-        prediction = label_scaler.inverse_transform(prediction.reshape(-1, 1))
-        st.success(f'PMG/PMH Yearly Income Prediction: ${format(round(prediction[0][0]), ",")}')
+ 
+    sample = np.array([[housing_permits, plug_in_hybrid, electric, comm_construction, capex_iou]], dtype=float).reshape(1, -1)
+    scaled_sample = feature_scaler.transform(sample)
+    prediction = model.predict(scaled_sample)
+    prediction = label_scaler.inverse_transform(prediction.reshape(-1, 1))
+    st.success(f'PMG/PMH Yearly Income Prediction: ${format(round(prediction[0][0]), ",")}')
 
 if st.button('Model Prediction'):
     infer(model, housing_permits, plug_in_hybrid, electric, comm_construction, capex_iou)
 
 st.dataframe(importance_df)
+
