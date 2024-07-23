@@ -1,6 +1,6 @@
-import joblib
-import streamlit as st
-import numpy as np
-import warnings
-import sklearn
-import pandas as pd 
+joblib
+streamlit as st
+numpy as np
+warnings
+sklearn
+pandas as pd 
