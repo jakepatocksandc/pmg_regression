@@ -17,20 +17,19 @@ st.title('Regression Models for PME/PMH')
 
 housing_permits = st.text_input('Housing Permits Issued Per Year', value=1000)
 plug_in_hybrid = st.text_input('Plug-in EV Units Sold Per Year', value=50000)
-electric = st.text_input('EV Units Sold Per Year', 50000)
+electric = st.text_input('EV Units Sold Per Year', value=50000)
 comm_construction = st.text_input('Commercial Construction Spending Per Year (millions of $)', value=600000)
 capex_iou = st.text_input('Underground CAPEX IOU', value=20000)
 model_type = st.selectbox('Choose Model Type', ['Random Forest', 'Elastic Net', 'Lasso'])
 
-if model_type == 'Random Forest':
+if model_type == 'Random Forest Model':
     model = rf_model
-elif model_type == 'Elastic Net':
+elif model_type == 'Elastic Net Model':
     model = elastic_model
-elif model_type == 'Lasso':
+elif model_type == 'Lasso Model':
     model = lasso_model
 
 def infer(model, housing_permits, plug_in_hybrid, electric, comm_construction, capex_iou):
- 
     sample = np.array([[housing_permits, plug_in_hybrid, electric, comm_construction, capex_iou]], dtype=float).reshape(1, -1)
     scaled_sample = feature_scaler.transform(sample)
     prediction = model.predict(scaled_sample)
