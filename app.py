@@ -15,11 +15,11 @@ importance_df = pd.read_csv(r'model_importances.csv')
 
 st.title('Regression Models for PME/PMH')
 
-housing_permits = st.text_input('Housing Permits Issued Per Year')
-plug_in_hybrid = st.text_input('Plug-in EV Units Sold Per Year')
-electric = st.text_input('EV Units Sold Per Year')
-comm_construction = st.text_input('Commercial Construction Spending Per Year (millions of $)')
-capex_iou = st.text_input('Underground CAPEX IOU')
+housing_permits = st.text_input('Housing Permits Issued Per Year', value=1000)
+plug_in_hybrid = st.text_input('Plug-in EV Units Sold Per Year', value=50000)
+electric = st.text_input('EV Units Sold Per Year', 50000)
+comm_construction = st.text_input('Commercial Construction Spending Per Year (millions of $)', value=600000)
+capex_iou = st.text_input('Underground CAPEX IOU', value=20000)
 model_type = st.selectbox('Choose Model Type', ['Random Forest', 'Elastic Net', 'Lasso'])
 
 if model_type == 'Random Forest':
