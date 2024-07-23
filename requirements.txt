@@ -1,6 +1,6 @@
 joblib
-streamlit as st
-numpy as np
+streamlit
+numpy
 warnings
 sklearn
-pandas as pd 
+pandas
