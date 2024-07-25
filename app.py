@@ -22,11 +22,11 @@ comm_construction = st.text_input('Commercial Construction Spending Per Year (mi
 capex_iou = st.text_input('Underground CAPEX IOU', value=20000)
 model_type = st.selectbox('Choose Model Type', ['Random Forest', 'Elastic Net', 'Lasso'])
 
-if model_type == 'Random Forest Model':
+if model_type == 'Random Forest':
     model = rf_model
-elif model_type == 'Elastic Net Model':
+elif model_type == 'Elastic Net':
     model = elastic_model
-elif model_type == 'Lasso Model':
+elif model_type == 'Lasso':
     model = lasso_model
 
 def infer(model, housing_permits, plug_in_hybrid, electric, comm_construction, capex_iou):
